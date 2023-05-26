@@ -1,0 +1,10 @@
+<app-presentation
+  [titleOfPage]="'Tasks'"
+  [subtitleOfPage]="'You can browse through tasks below'"
+>
+  <app-card-with-avatar-and-checklist
+    *ngFor="let item of tasksList$ | async"
+    [name]="item.name"
+    [dueDate]="item.dueDate"
+  ></app-card-with-avatar-and-checklist>
+</app-presentation>
