@@ -1,0 +1,35 @@
+<div class="content-list-body">
+  <div class="card-list-body">
+    <div class="card card-task">
+      <div class="progress">
+        <div
+          class="progress-bar bg-danger"
+          role="progressbar"
+          style="width: 75%"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">
+          <h6 data-filter-by="text" class="H6-filter-by-text">{{ name }}</h6>
+          <span class="text-small">{{ dueDate }}</span>
+        </div>
+        <div class="card-meta">
+          <ul class="avatars">
+            <li>
+              <a href="#" data-toggle="tooltip">
+                <img alt="Kenny Tran" class="avatar" [src]="avatar" />
+              </a>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center">
+            <i class="material-icons">playlist_add_check</i>
+            <span>3/3</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
