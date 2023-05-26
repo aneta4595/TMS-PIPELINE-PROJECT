@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { PresentationComponent } from './presentation.component';
 import { CommonModule } from '@angular/common';
-import { CardComponentModule } from '../card/card.component-module';
 
 @NgModule({
-  imports: [CommonModule, CardComponentModule],
+  imports: [CommonModule],
   declarations: [PresentationComponent],
   providers: [],
   exports: [PresentationComponent],

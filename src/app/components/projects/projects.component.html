@@ -1,0 +1,11 @@
+<app-presentation
+  [titleOfPage]="'Projects'"
+  [subtitleOfPage]="'You can browse through projects below'"
+>
+  <app-card-with-progress
+    *ngFor="let item of projectsList$ | async"
+    [title]="item.name"
+    [subtitle]="'Due on ' + (item.dueDate | date : 'mediumDate' : 'UTC-1')"
+    [value]="item.percentage"
+  ></app-card-with-progress>
+</app-presentation>
