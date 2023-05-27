@@ -3,11 +3,21 @@
     <div class="col-lg-11 col-xl-10">
       <div class="page-header">
         <h1>{{ titleOfPage }}</h1>
-        <p class="lead">{{ subtitleOfPage }}</p>
+        <p class="lead">
+          {{ subtitleOfPage }}
+        </p>
       </div>
       <hr />
 
-      <ng-content></ng-content>
+      <div class="tab-content">
+        <div class="content-list">
+          <div class="content-list-body row filter-list-1685165101667">
+            <div class="col-lg-6">
+              <ng-content></ng-content>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
