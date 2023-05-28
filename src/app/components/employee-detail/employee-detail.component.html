@@ -1,0 +1,22 @@
+<app-card-employee-detail
+  *ngFor="let employee of employeesList$ | async"
+  [name]="employee.firstName + ' ' + employee.lastName"
+  [position]="employee.position"
+  [avatarUrl]="employee.avatarUrl"
+>
+  <app-tabset [name]="'Teams'" [link]="'teams'">
+    <app-simple-card
+      *ngFor="let team of teamsList$ | async"
+      [title]="team.name"
+      [subtitle]="
+        team.projects.length + ' Projects, ' + team.members.length + ' Members'
+      "
+    >
+      <app-avatar-list
+        *ngFor="let avatar of team.members"
+        [avatarUrl]="avatar.avatarUrl"
+        [id]="avatar.id"
+      ></app-avatar-list>
+    </app-simple-card>
+  </app-tabset>
+</app-card-employee-detail>

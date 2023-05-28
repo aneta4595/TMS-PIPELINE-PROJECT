@@ -3,12 +3,11 @@ import {
   Component,
   ViewEncapsulation,
 } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { ChecklistModel } from '../../models/checklist.model';
 import { TaskModel } from '../../models/task.model';
 import { TasksService } from '../../services/tasks.service';
 import { TeamsService } from '../../services/teams.service';
-import { TeamModel } from 'src/app/models/team.model';
 
 @Component({
   selector: 'app-tasks',
@@ -21,8 +20,6 @@ export class TasksComponent {
     this._tasksService.checklist();
   readonly tasksList$: Observable<TaskModel[]> =
     this._tasksService.getAllTasks();
-  readonly teamsList$: Observable<TeamModel[]> =
-    this._teamsService.getAllTeams();
 
   constructor(
     private _tasksService: TasksService,

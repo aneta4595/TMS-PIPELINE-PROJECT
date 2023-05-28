@@ -6,5 +6,7 @@
     *ngFor="let item of tasksList$ | async"
     [name]="item.name"
     [dueDate]="item.dueDate"
-  ></app-card-with-avatar-and-checklist>
+  >
+    <app-avatar-list></app-avatar-list>
+  </app-card-with-avatar-and-checklist>
 </app-presentation>

@@ -6,14 +6,13 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-avatar-card',
-  templateUrl: './avatar-card.component.html',
+  selector: 'app-card-employee-detail',
+  templateUrl: './card-employee-detail.component.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AvatarCardComponent {
-  @Input() avatar?: string | null;
-  @Input() fullName?: string;
+export class CardEmployeeDetailComponent {
+  @Input() name?: string;
   @Input() position?: string;
-  @Input() id?: string;
+  @Input() avatarUrl?: string;
 }

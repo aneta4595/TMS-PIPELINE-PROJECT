@@ -6,13 +6,13 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-card',
-  styleUrls: ['./card.component.scss'],
-  templateUrl: './card.component.html',
+  selector: 'app-simple-card',
+  styleUrls: ['./simple-card.component.scss'],
+  templateUrl: './simple-card.component.html',
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CardComponent {
+export class SimpleCardComponent {
   @Input() title?: string;
   @Input() subtitle?: string | number;
 }
