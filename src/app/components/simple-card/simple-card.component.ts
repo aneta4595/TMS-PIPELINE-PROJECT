@@ -15,4 +15,5 @@ import {
 export class SimpleCardComponent {
   @Input() title?: string;
   @Input() subtitle?: string | number;
+  @Input() id?: string;
 }

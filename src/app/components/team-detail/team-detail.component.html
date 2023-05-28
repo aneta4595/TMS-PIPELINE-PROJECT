@@ -1,0 +1,12 @@
+<app-presentation
+  *ngFor="let team of teamsList$ | async"
+  [titleOfPage]="team.name"
+  [subtitleOfPage]="team.description"
+>
+  <app-avatar-list
+    app-avatar-list
+    *ngFor="let avatar of team.members"
+    [avatarUrl]="avatar.avatarUrl"
+    [id]="avatar.id"
+  ></app-avatar-list>
+</app-presentation>
