@@ -4,9 +4,6 @@ import {
   Input,
   ViewEncapsulation,
 } from '@angular/core';
-import { Observable } from 'rxjs';
-import { TeamModel } from 'src/app/models/team.model';
-import { TeamsService } from 'src/app/services/teams.service';
 
 @Component({
   selector: 'app-presentation',
@@ -18,9 +15,4 @@ import { TeamsService } from 'src/app/services/teams.service';
 export class PresentationComponent {
   @Input() titleOfPage?: string;
   @Input() subtitleOfPage?: string;
-
-  readonly teamsList$: Observable<TeamModel[]> =
-    this._teamsService.getAllTeams();
-
-  constructor(private _teamsService: TeamsService) {}
 }

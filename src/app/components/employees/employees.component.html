@@ -1,10 +1,14 @@
 <app-presentation
   [titleOfPage]="'Employees'"
   [subtitleOfPage]="'You can browse through employees below'"
-  ><app-avatar-card
-    *ngFor="let item of employeesList$ | async"
-    [avatar]="item.avatarUrl"
-    [fullName]="item.firstName + ' ' + item.lastName"
-    [position]="item.position"
-  ></app-avatar-card>
+>
+  <app-cards-row>
+    <app-avatar-card
+      *ngFor="let item of employeesList$ | async"
+      [avatar]="item.avatarUrl"
+      [fullName]="item.firstName + ' ' + item.lastName"
+      [position]="item.position"
+      [id]="item.id"
+    ></app-avatar-card>
+  </app-cards-row>
 </app-presentation>

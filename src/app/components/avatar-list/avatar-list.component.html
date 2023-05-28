@@ -1,0 +1,11 @@
+<ul class="avatars d-inline">
+  <li>
+    <a
+      routerLink="/employees/{{ id }}"
+      data-toggle="tooltip"
+      title="{{ name }}"
+    >
+      <img alt="{{ name }}" class="avatar" [src]="avatarUrl" />
+    </a>
+  </li>
+</ul>

@@ -3,18 +3,24 @@
   [subtitleOfPage]="'Select a team below to get started'"
 >
   <h2>Teams</h2>
-  <app-card
-    *ngFor="let item of teamsList$ | async"
-    [title]="item.name"
-    [subtitle]="
-      item.projects.length + ' Projects, ' + item.members.length + ' Members'
-    "
-  ></app-card>
+  <app-cards-row>
+    <app-simple-card
+      *ngFor="let item of teamsList$ | async"
+      [title]="item.name"
+      [subtitle]="
+        item.projects.length + ' Projects, ' + item.members.length + ' Members'
+      "
+    ></app-simple-card>
+  </app-cards-row>
+
   <h2>Members</h2>
-  <app-avatar-card
-    *ngFor="let item of employeesList$ | async"
-    [avatar]="item.avatarUrl"
-    [fullName]="item.firstName + ' ' + item.lastName"
-    [position]="item.position"
-  ></app-avatar-card>
+  <app-cards-row>
+    <app-avatar-card
+      *ngFor="let item of employeesList$ | async"
+      [avatar]="item.avatarUrl"
+      [fullName]="item.firstName + ' ' + item.lastName"
+      [position]="item.position"
+      [id]="item.id"
+    ></app-avatar-card>
+  </app-cards-row>
 </app-presentation>

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xl-10 col-lg-11">
+      <div class="page-header mb-4">
+        <div class="media">
+          <img alt="Image" [src]="avatarUrl" class="avatar avatar-lg mt-1" />
+          <div class="media-body ml-3">
+            <h1 class="mb-0">{{ name }}</h1>
+            <p class="lead">{{ position }}</p>
+          </div>
+        </div>
+      </div>
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

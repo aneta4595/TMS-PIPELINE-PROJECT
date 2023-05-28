@@ -2,11 +2,13 @@
   [titleOfPage]="'Teams'"
   [subtitleOfPage]="'You can browse through teams below'"
 >
-  <app-card
-    *ngFor="let item of teamsList$ | async"
-    [title]="item.name"
-    [subtitle]="
-      item.projects.length + ' Projects, ' + item.members.length + ' Members'
-    "
-  ></app-card>
+  <app-cards-row>
+    <app-simple-card
+      *ngFor="let item of teamsList$ | async"
+      [title]="item.name"
+      [subtitle]="
+        item.projects.length + ' Projects, ' + item.members.length + ' Members'
+      "
+    ></app-simple-card>
+  </app-cards-row>
 </app-presentation>
