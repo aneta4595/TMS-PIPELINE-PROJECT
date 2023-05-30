@@ -5,9 +5,7 @@ import { CardEmployeeDetailComponentModule } from '../card-employee-detail/card-
 import { AvatarListComponentModule } from '../avatar-list/avatar-list.component-module';
 import { SimpleCardComponentModule } from '../simple-card/simple-card.component-module';
 import { PlaceholderImgPipeModule } from '../../pipes/placeholder-img.pipe-module';
-
 import { TabContentComponentModule } from '../tab-content/tab-content.component-module';
-import { CardsRowComponentModule } from '../cards-row/cards-row.component-module';
 import { TabsetWithOptionsToChooseComponentModule } from '../tabset-with-options-to-choose/tabset-with-options-to-choose.component-module';
 
 @NgModule({
@@ -22,7 +20,6 @@ import { TabsetWithOptionsToChooseComponentModule } from '../tabset-with-options
     PlaceholderImgPipeModule,
     TabsetWithOptionsToChooseComponentModule,
     TabContentComponentModule,
-    CardsRowComponentModule,
   ],
 })
 export class EmployeeDetailComponentModule {}

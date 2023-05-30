@@ -4,7 +4,6 @@ import { PresentationComponentModule } from '../presentation/presentation.compon
 import { AvatarCardComponentModule } from '../avatar-card/avatar-card.component-module';
 import { CommonModule } from '@angular/common';
 import { PlaceholderImgPipeModule } from 'src/app/pipes/placeholder-img.pipe-module';
-import { CardsRowComponentModule } from '../cards-row/cards-row.component-module';
 import { TestComponentModule } from '../test/test.component-module';
 
 @NgModule({
@@ -13,7 +12,6 @@ import { TestComponentModule } from '../test/test.component-module';
     AvatarCardComponentModule,
     CommonModule,
     PlaceholderImgPipeModule,
-    CardsRowComponentModule,
     TestComponentModule,
   ],
   declarations: [EmployeesComponent],

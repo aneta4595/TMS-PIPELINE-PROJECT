@@ -3,9 +3,7 @@ import { TeamDetailComponent } from './team-detail.component';
 import { PresentationComponentModule } from '../presentation/presentation.component-module';
 import { AvatarListComponentModule } from '../avatar-list/avatar-list.component-module';
 import { CommonModule } from '@angular/common';
-
 import { SimpleCardComponentModule } from '../simple-card/simple-card.component-module';
-import { CardsRowComponentModule } from '../cards-row/cards-row.component-module';
 import { TabsetComponentModule } from '../tabset/tabset.component-module';
 import { TabContentComponentModule } from '../tab-content/tab-content.component-module';
 
@@ -15,7 +13,6 @@ import { TabContentComponentModule } from '../tab-content/tab-content.component-
     AvatarListComponentModule,
     CommonModule,
     SimpleCardComponentModule,
-    CardsRowComponentModule,
     TabsetComponentModule,
     TabContentComponentModule,
   ],

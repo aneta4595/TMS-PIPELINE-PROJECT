@@ -16,4 +16,5 @@ export class CardWithAvatarAndChecklistComponent {
   @Input() checklist?: string[];
   @Input() name?: string;
   @Input() dueDate?: number | unknown;
+  @Input() value?: number;
 }

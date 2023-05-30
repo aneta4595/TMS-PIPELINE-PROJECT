@@ -6,5 +6,13 @@ export interface ProjectModel {
   readonly dueDate: string;
   readonly visibility: string;
   readonly percentage: number;
-  readonly assignees: string[];
+  readonly assignees: [
+    {
+      id: string;
+      firstName: string;
+      lastName: string;
+      position: string;
+      avatarUrl: string;
+    }
+  ];
 }
