@@ -5,6 +5,7 @@ import { AvatarCardComponentModule } from '../avatar-card/avatar-card.component-
 import { CommonModule } from '@angular/common';
 import { PlaceholderImgPipeModule } from 'src/app/pipes/placeholder-img.pipe-module';
 import { CardsRowComponentModule } from '../cards-row/cards-row.component-module';
+import { TestComponentModule } from '../test/test.component-module';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { CardsRowComponentModule } from '../cards-row/cards-row.component-module
     CommonModule,
     PlaceholderImgPipeModule,
     CardsRowComponentModule,
+    TestComponentModule,
   ],
   declarations: [EmployeesComponent],
   providers: [],

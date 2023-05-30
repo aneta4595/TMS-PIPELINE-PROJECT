@@ -6,11 +6,11 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-tabset',
-  templateUrl: './tabset.component.html',
+  selector: 'app-tab-content',
+  templateUrl: './tab-content.component.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TabsetComponent {
+export class TabContentComponent {
   @Input() name?: string;
 }

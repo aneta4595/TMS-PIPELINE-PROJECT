@@ -1,30 +1,7 @@
-<ul class="nav nav-tabs nav-fill" role="tablist">
-  <li class="nav-item">
-    <a
-      class="nav-link active"
-      data-toggle="tab"
-      href="/{{ link }}"
-      role="tab"
-      aria-controls="name"
-      aria-selected="true"
-      >{{ name }}</a
-    >
-  </li>
-</ul>
-<div class="tab-content">
-  <div
-    class="tab-pane fade show active"
-    id="teams"
-    role="tabpanel"
-    data-filter-list="content-list-body"
-  >
-    <div class="row content-list-head">
-      <div class="col-auto">
-        <h3>{{ name }}</h3>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <ng-content></ng-content>
-  </div>
+<div class="container">
+  <ul class="nav nav-tabs nav-fill">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">{{ name }}</a>
+    </li>
+  </ul>
 </div>

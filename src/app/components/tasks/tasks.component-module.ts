@@ -4,6 +4,7 @@ import { PresentationComponentModule } from '../presentation/presentation.compon
 import { CardWithAvatarAndChecklistComponentModule } from '../card-with-avatar-and-checklist/card-with-avatar-and-checklist.component-module';
 import { CommonModule } from '@angular/common';
 import { AvatarListComponentModule } from '../avatar-list/avatar-list.component-module';
+import { DateTransformPipeModule } from 'src/app/pipes/date-transform.pipe-module';
 
 @NgModule({
   imports: [
@@ -11,6 +12,7 @@ import { AvatarListComponentModule } from '../avatar-list/avatar-list.component-
     CardWithAvatarAndChecklistComponentModule,
     CommonModule,
     AvatarListComponentModule,
+    DateTransformPipeModule,
   ],
   declarations: [TasksComponent],
   providers: [],

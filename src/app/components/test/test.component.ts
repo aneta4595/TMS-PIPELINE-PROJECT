@@ -6,11 +6,13 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-tabset',
-  templateUrl: './tabset.component.html',
+  selector: 'app-test',
+  templateUrl: './test.component.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TabsetComponent {
-  @Input() name?: string;
+export class TestComponent {
+  @Input() fullName?: string;
+  @Input() avatar?: string;
+  @Input() position?: string;
 }

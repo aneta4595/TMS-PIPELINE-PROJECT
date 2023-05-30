@@ -1,15 +1,15 @@
-<div class="content-list-body row filter-list-1685165101667">
-  <div class="col-lg-11 col-xl-10">
-    <a class="media media-member" routerLink="/employees/{{ id }}">
-      <img [src]="avatar | placeholderImg" class="avatar avatar-lg" />
-      <div class="media-body">
-        <h6 class="mb-0 H6-filter-by-text" data-filter-by="text">
-          {{ fullName }}
-        </h6>
-        <span data-filter-by="text" class="text-body SPAN-filter-by-text">{{
-          position
-        }}</span>
-      </div>
-    </a>
+<div class="col-lg-11 col-xl-10">
+  <div class="content-list-body row filter-list-1685389245769">
+    <div class="col-lg-12">
+      <a class="media media-member" href="#">
+        <img [src]="avatar" class="avatar avatar-lg" />
+        <div class="media-body">
+          <h6 class="mb-0">{{ fullName }}</h6>
+          <span data-filter-by="text" class="text-body SPAN-filter-by-text">{{
+            position
+          }}</span>
+        </div>
+      </a>
+    </div>
   </div>
 </div>

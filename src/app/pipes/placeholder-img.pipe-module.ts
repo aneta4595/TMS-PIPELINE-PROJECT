@@ -8,7 +8,7 @@ import { PLACEHOLDER_IMAGE_SOURCE } from './placeholder-img.config';
   providers: [
     {
       provide: PLACEHOLDER_IMAGE_SOURCE,
-      useValue: '/src/assets/img/broken-image.jpg',
+      useValue: `/src/assets/img/broken-image.jpg`,
     },
   ],
   exports: [PlaceholderImgPipe],
