@@ -3,8 +3,9 @@
   [subtitleOfPage]="'Select a team below to get started'"
 >
   <h2>Teams</h2>
-  <app-cards-row>
+  <div class="row">
     <app-simple-card
+      class="col-lg-6"
       *ngFor="let item of teamsList$ | async"
       [title]="item.name"
       [subtitle]="
@@ -12,16 +13,16 @@
       "
       [id]="item.id"
     ></app-simple-card>
-  </app-cards-row>
-
+  </div>
   <h2>Members</h2>
-  <app-cards-row>
+  <div class="row">
     <app-avatar-card
+      class="col-lg-6"
       *ngFor="let item of employeesList$ | async"
       [avatar]="item.avatarUrl"
       [fullName]="item.firstName + ' ' + item.lastName"
       [position]="item.position"
       [id]="item.id"
     ></app-avatar-card>
-  </app-cards-row>
+  </div>
 </app-presentation>

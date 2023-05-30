@@ -2,8 +2,9 @@
   [titleOfPage]="'Teams'"
   [subtitleOfPage]="'You can browse through teams below'"
 >
-  <app-cards-row>
+  <div class="row">
     <app-simple-card
+      class="col-lg-6"
       *ngFor="let item of teamsList$ | async"
       [title]="item.name"
       [subtitle]="
@@ -11,5 +12,5 @@
       "
       [id]="item.id"
     ></app-simple-card>
-  </app-cards-row>
+  </div>
 </app-presentation>

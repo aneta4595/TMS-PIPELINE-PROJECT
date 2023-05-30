@@ -2,13 +2,14 @@
   [titleOfPage]="'Employees'"
   [subtitleOfPage]="'You can browse through employees below'"
 >
-  <app-cards-row>
+  <div class="row">
     <app-avatar-card
+      class="col-lg-6"
       *ngFor="let item of employeesList$ | async"
       [avatar]="item.avatarUrl"
       [fullName]="item.firstName + ' ' + item.lastName"
       [position]="item.position"
       [id]="item.id"
     ></app-avatar-card>
-  </app-cards-row>
+  </div>
 </app-presentation>
