@@ -2,21 +2,29 @@
   *ngFor="let employee of employeesList$ | async"
   [name]="employee.firstName + ' ' + employee.lastName"
   [position]="employee.position"
-  [avatarUrl]="employee.avatarUrl"
+  [avatarUrl]="employee.avatarUrl | placeholderImg"
 >
-  <app-tabset [name]="'Teams'" [link]="'teams'">
-    <app-simple-card
-      *ngFor="let team of teamsList$ | async"
-      [title]="team.name"
-      [subtitle]="
-        team.projects.length + ' Projects, ' + team.members.length + ' Members'
-      "
-    >
-      <app-avatar-list
-        *ngFor="let avatar of team.members"
-        [avatarUrl]="avatar.avatarUrl"
-        [id]="avatar.id"
-      ></app-avatar-list>
-    </app-simple-card>
-  </app-tabset>
+  <app-tabset-with-options [optionOne]="'Teams'" [optionTwo]="'Projects'">
+  </app-tabset-with-options>
+  <app-tab-content [name]="'Teams'">
+    <app-cards-row>
+      <app-simple-card
+        *ngFor="let team of teamsList$ | async"
+        [title]="team.name"
+        [subtitle]="
+          team.projects.length +
+          ' Projects, ' +
+          team.members.length +
+          ' Members'
+        "
+        [id]="team.id"
+      >
+        <app-avatar-list
+          *ngFor="let avatar of team.members"
+          [avatarUrl]="avatar.avatarUrl"
+          [id]="avatar.id"
+        ></app-avatar-list>
+      </app-simple-card>
+    </app-cards-row>
+  </app-tab-content>
 </app-card-employee-detail>

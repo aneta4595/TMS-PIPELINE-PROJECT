@@ -22,22 +22,12 @@ export class EmployeeDetailComponent {
     this._employeesService.getAllEmployees(),
     this._activatedRoute.params,
   ]).pipe(
-    map(([employees, params]) => employees.filter((e) => e.id === params['id']))
-  );
-
-  readonly teamsList$: Observable<TeamModel[]> = combineLatest([
-    this._teamsService.getAllTeams(),
-    this._employeesService.getAllEmployees(),
-  ]).pipe(
-    map(([teams, employees]) =>
-      teams.filter((t) =>
-        t.members
-          .filter((m) => m.id.includes(t.id)) //  <-- wyświetelnie awatarów we właściwym teamie
-          .map((employees) => employees.id)
-          .includes(t.id)
-      )
+    map(([employees, params]: [EmployeeModel[], Params]) =>
+      employees.filter((e) => e.id === params['id'])
     )
   );
+  readonly teamsList$: Observable<TeamModel[]> =
+    this._teamsService.getAllTeams();
 
   constructor(
     private _activatedRoute: ActivatedRoute,
