@@ -4,11 +4,20 @@ import { PresentationComponentModule } from '../presentation/presentation.compon
 import { AvatarListComponentModule } from '../avatar-list/avatar-list.component-module';
 import { CommonModule } from '@angular/common';
 
+import { SimpleCardComponentModule } from '../simple-card/simple-card.component-module';
+import { CardsRowComponentModule } from '../cards-row/cards-row.component-module';
+import { TabsetComponentModule } from '../tabset/tabset.component-module';
+import { TabContentComponentModule } from '../tab-content/tab-content.component-module';
+
 @NgModule({
   imports: [
     PresentationComponentModule,
     AvatarListComponentModule,
     CommonModule,
+    SimpleCardComponentModule,
+    CardsRowComponentModule,
+    TabsetComponentModule,
+    TabContentComponentModule,
   ],
   declarations: [TeamDetailComponent],
   providers: [],
