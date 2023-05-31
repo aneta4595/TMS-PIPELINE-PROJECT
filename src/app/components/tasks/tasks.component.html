@@ -7,13 +7,6 @@
     [name]="item.name"
     [dueDate]="item.dueDate | dateTransform"
   >
-    <div *ngFor="let project of projectsList$ | async">
-      <div *ngFor="let avatar of project.assignees">
-        <app-avatar-list
-          [avatarUrl]="avatar.avatarUrl"
-          [id]="avatar.id"
-        ></app-avatar-list>
-      </div>
-    </div>
+    <app-avatar-list [avatars]="item.members"></app-avatar-list>
   </app-card-with-avatar-and-checklist>
 </app-presentation>

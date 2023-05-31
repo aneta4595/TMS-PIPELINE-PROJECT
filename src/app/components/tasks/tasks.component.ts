@@ -4,13 +4,10 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Observable, combineLatest, map } from 'rxjs';
-import { ChecklistModel } from '../../models/checklist.model';
-import { TaskModel } from '../../models/task.model';
-import { ProjectModel } from '../../models/project.model';
 import { TasksService } from '../../services/tasks.service';
-import { TeamsService } from '../../services/teams.service';
+import { EmployeesService } from '../../services/employees.service';
+import { MemberQueryModel } from 'src/app/query-models/member.query-model';
 import { TaskQueryModel } from 'src/app/models/task-query.model';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tasks',
@@ -19,23 +16,33 @@ import { ActivatedRoute } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TasksComponent {
-  readonly tasksList$: Observable<TaskModel[]> =
-    this._tasksService.getAllTasks();
-  readonly checklist$: Observable<ChecklistModel[]> = combineLatest([
-    this._tasksService.checklist(),
-    this.tasksList$,
+  readonly tasksList$: Observable<TaskQueryModel[]> = combineLatest([
+    this._tasksService.getAllTasks(),
+    this._employeesService.getAllEmployees(),
   ]).pipe(
-    map(([check, tasks]: [ChecklistModel[], TaskModel[]]) =>
-      check.filter((c) => c.id && c.isDone === true)
-    )
+    map(([tasks, employees]) => {
+      return tasks.map((t) => {
+        const membersMap = employees.reduce(
+          (a, c) => ({
+            ...a,
+            [c.id]: {
+              avatarUrl: c.avatarUrl,
+              redirectUrl: `/employees/${c.id}`,
+            },
+          }),
+          {} as Record<string, MemberQueryModel>
+        );
+        return {
+          name: t.name,
+          dueDate: t.dueDate,
+          members: t.assigneeIds.map((a) => membersMap[a]),
+        };
+      });
+    })
   );
-
-  readonly projectsList$: Observable<ProjectModel[]> =
-    this._teamsService.getAllProjects();
 
   constructor(
     private _tasksService: TasksService,
-    private _teamsService: TeamsService,
-    private _activatedRoute: ActivatedRoute
+    private _employeesService: EmployeesService
   ) {}
 }

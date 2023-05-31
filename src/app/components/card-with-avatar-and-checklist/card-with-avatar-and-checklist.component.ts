@@ -1,9 +1,11 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  HostBinding,
   Input,
   ViewEncapsulation,
 } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-card-with-avatar-and-checklist',
@@ -12,9 +14,6 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardWithAvatarAndChecklistComponent {
-  @Input() avatar?: string;
-  @Input() checklist?: string[];
   @Input() name?: string;
   @Input() dueDate?: number | unknown;
-  @Input() value?: number;
 }

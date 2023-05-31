@@ -1,30 +1,28 @@
-<app-card-employee-detail
-  *ngFor="let employee of employeesList$ | async"
-  [name]="employee.firstName + ' ' + employee.lastName"
-  [position]="employee.position"
-  [avatarUrl]="employee.avatarUrl | placeholderImg"
->
-  <app-tabset-with-options [optionOne]="'Teams'" [optionTwo]="'Projects'">
-  </app-tabset-with-options>
-  <app-tab-content [name]="'Teams'">
+<ng-container *ngIf="employee$ | async as employee">
+  <app-card-employee-detail
+    [name]="employee.fullName"
+    [position]="employee.position"
+    [avatarUrl]="employee.avatarUrl | placeholderImg"
+  >
+    <app-tabset-with-options [optionOne]="'Teams'" [optionTwo]="'Projects'">
+      <app-tab-content [name]="'Teams'"> </app-tab-content>
+    </app-tabset-with-options>
+
     <div class="row">
       <app-simple-card
-        *ngFor="let team of teamsList$ | async"
+        class="col-lg-6"
+        *ngFor="let team of employee.teams"
         [title]="team.name"
         [subtitle]="
-          team.projects.length +
+          team.numberOfProjects +
           ' Projects, ' +
-          team.members.length +
+          team.numberOfMembers +
           ' Members'
         "
         [id]="team.id"
       >
-        <app-avatar-list
-          *ngFor="let avatar of team.members"
-          [avatarUrl]="avatar.avatarUrl"
-          [id]="avatar.id"
-        ></app-avatar-list>
+        <app-avatar-list [avatars]="team.members"></app-avatar-list>
       </app-simple-card>
     </div>
-  </app-tab-content>
-</app-card-employee-detail>
+  </app-card-employee-detail>
+</ng-container>

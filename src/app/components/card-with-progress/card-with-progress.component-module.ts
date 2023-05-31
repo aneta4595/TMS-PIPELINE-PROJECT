@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CardWithProgressComponent } from './card-with-progress.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-  imports: [],
+  imports: [CommonModule],
   declarations: [CardWithProgressComponent],
   providers: [],
-  exports: [CardWithProgressComponent]
+  exports: [CardWithProgressComponent],
 })
-export class CardWithProgressComponentModule {
-}
+export class CardWithProgressComponentModule {}

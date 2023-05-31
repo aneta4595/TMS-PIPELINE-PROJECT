@@ -4,6 +4,7 @@ import {
   Input,
   ViewEncapsulation,
 } from '@angular/core';
+import { MemberViewModel } from 'src/app/view-models/member.view-model';
 
 @Component({
   selector: 'app-avatar-list',
@@ -12,7 +13,5 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AvatarListComponent {
-  @Input() avatarUrl?: string;
-  @Input() name?: string;
-  @Input() id?: string;
+  @Input() avatars!: MemberViewModel[];
 }
