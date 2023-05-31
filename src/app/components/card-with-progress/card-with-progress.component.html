@@ -1,28 +1,33 @@
 <div class="content-list-body row filter-list-1685165101667">
-  <div class="col-lg-11 col-xl-10">
-    <div class="progress">
-      <div
-        class="progress-bar"
-        role="progressbar"
-        [style.width.%]="value"
-        [attr.aria-valuenow]="value"
-        aria-valuemin="0"
-        aria-valuemax="100"
-      ></div>
-    </div>
+  <div class="col-lg-11">
     <div class="card">
+      <div class="progress">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          [ngStyle]="{ valuenow: value, width: value + '%' }"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
+      </div>
       <div class="card-body">
         <div class="card-title">
           <h5 data-filter-by="text">
             {{ title }}
           </h5>
-        </div>
-        <div class="content-list-body row filter-list-1685165101667">
-          <div class="col-lg-11">
-            <span class="text-small">{{ subtitle }}</span>
-          </div>
+          <span class="text-small">{{ subtitle }}</span>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- <div class="progress">
+  <div
+    class="progress-bar"
+    role="progressbar"
+    [ngStyle]="{ valuenow: value, width: value + '%' }"
+    aria-valuemin="0"
+    aria-valuemax="100"
+  ></div>
+</div> -->
