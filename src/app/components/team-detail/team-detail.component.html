@@ -3,22 +3,17 @@
   [titleOfPage]="team.name"
   [subtitleOfPage]="team.description"
 >
-  <app-avatar-list
-    app-avatar-list
-    *ngFor="let avatar of team.members"
-    [avatarUrl]="avatar.avatarUrl"
-    [id]="avatar.id"
-  ></app-avatar-list>
+  <app-avatar-list app-avatar-list [avatars]="team.members"></app-avatar-list>
   <app-tabset app-tabset [name]="'Projects'"></app-tabset>
-  <app-tab-content [name]="'Projects'">
-    <div class="row">
-      <app-simple-card
-        *ngFor="let projects of team.projects"
-        [title]="projects.name"
-        [subtitle]="
-          'Due on ' + (projects.dueDate | date : 'mediumDate' : 'UTC-1')
-        "
-      ></app-simple-card>
-    </div>
-  </app-tab-content>
+  <app-tab-content [name]="'Projects'"> </app-tab-content>
+  <div class="row">
+    <app-simple-card
+      class="col-lg-6"
+      *ngFor="let projects of team.projects"
+      [title]="projects.name"
+      [subtitle]="
+        'Due on ' + (projects.dueDate | date : 'mediumDate' : 'UTC-1')
+      "
+    ></app-simple-card>
+  </div>
 </app-presentation>
