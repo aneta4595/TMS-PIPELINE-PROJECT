@@ -10,6 +10,7 @@ import { EmployeeModel } from '../../models/employee.model';
 import { TeamModel } from '../../models/team.model';
 import { EmployeesService } from '../../services/employees.service';
 import { TeamsService } from '../../services/teams.service';
+import { EmployeeWithTeamsQueryModel } from 'src/app/models/employee-with-teams-query.model';
 
 @Component({
   selector: 'app-employee-detail',
@@ -18,16 +19,50 @@ import { TeamsService } from '../../services/teams.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeeDetailComponent {
-  readonly employeesList$: Observable<EmployeeModel[]> = combineLatest([
-    this._employeesService.getAllEmployees(),
-    this._activatedRoute.params,
-  ]).pipe(
-    map(([employees, params]: [EmployeeModel[], Params]) =>
-      employees.filter((e) => e.id === params['id'])
-    )
-  );
-  readonly teamsList$: Observable<TeamModel[]> =
-    this._teamsService.getAllTeams();
+  readonly employee$: Observable<EmployeeWithTeamsQueryModel | undefined> =
+    combineLatest([
+      this._employeesService.getAllEmployees(),
+      this._activatedRoute.params,
+      this._teamsService.getAllTeams(),
+    ]).pipe(
+      map(
+        ([employees, params, teams]: [
+          EmployeeModel[],
+          Params,
+          TeamModel[]
+        ]) => {
+          const employee: EmployeeModel | undefined = employees.find(
+            (e) => e.id === params['id']
+          );
+          const employeeTeams = teams
+            .filter((t) => t.members.some((m) => m.id === employee?.id))
+            .map((team) => {
+              return {
+                name: team.name,
+                numberOfProjects: team.projects.length,
+                numberOfMembers: team.members.length,
+                id: team.id,
+                members: team.members.map((m) => {
+                  return {
+                    avatarUrl: m.avatarUrl,
+                    redirectUrl: `/employees/${m.id}`,
+                  };
+                }),
+              };
+            });
+          if (!employee) {
+            return undefined;
+          }
+          return {
+            id: employee.id,
+            fullName: employee.firstName + ' ' + employee.lastName,
+            position: employee.position,
+            avatarUrl: employee.avatarUrl,
+            teams: employeeTeams,
+          };
+        }
+      )
+    );
 
   constructor(
     private _activatedRoute: ActivatedRoute,
