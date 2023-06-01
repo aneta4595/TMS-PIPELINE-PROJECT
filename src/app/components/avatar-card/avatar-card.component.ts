@@ -15,5 +15,5 @@ export class AvatarCardComponent {
   @Input() avatar?: string | null;
   @Input() fullName?: string;
   @Input() position?: string;
-  @Input() id?: string;
+  @Input() redirectUrl?: string;
 }

@@ -1,6 +1,6 @@
 <ng-container *ngIf="employee$ | async as employee">
   <app-card-employee-detail
-    [name]="employee.fullName"
+    [fullName]="employee.fullName"
     [position]="employee.position"
     [avatarUrl]="employee.avatarUrl | placeholderImg"
   >
