@@ -4,7 +4,6 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Observable } from 'rxjs';
-import { TeamModel } from '../../models/team.model';
 import { TeamsService } from '../../services/teams.service';
 import { ProjectModel } from 'src/app/models/project.model';
 
@@ -16,8 +15,6 @@ import { ProjectModel } from 'src/app/models/project.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectsComponent {
-  readonly teamProjects$: Observable<TeamModel[]> =
-    this._teamsService.getAllTeams();
   readonly projectsList$: Observable<ProjectModel[]> =
     this._teamsService.getAllProjects();
 

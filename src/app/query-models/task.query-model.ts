@@ -1,4 +1,4 @@
-import { MemberQueryModel } from '../query-models/member.query-model';
+import { MemberQueryModel } from './member.query-model';
 
 export interface TaskQueryModel {
   readonly name: string;

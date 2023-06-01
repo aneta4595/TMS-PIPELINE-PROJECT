@@ -1,4 +1,4 @@
-import { TeamQueryModel } from '../query-models/team.query-model';
+import { TeamQueryModel } from './team.query-model';
 
 export interface EmployeeWithTeamsQueryModel {
   readonly id: string;

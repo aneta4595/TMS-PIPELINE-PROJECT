@@ -10,7 +10,8 @@ import { EmployeeModel } from '../../models/employee.model';
 import { TeamModel } from '../../models/team.model';
 import { EmployeesService } from '../../services/employees.service';
 import { TeamsService } from '../../services/teams.service';
-import { EmployeeWithTeamsQueryModel } from 'src/app/models/employee-with-teams-query.model';
+import { EmployeeWithTeamsQueryModel } from 'src/app/query-models/employee-with-teams.query-model';
+import { TeamQueryModel } from 'src/app/query-models/team.query-model';
 
 @Component({
   selector: 'app-employee-detail',
@@ -37,18 +38,7 @@ export class EmployeeDetailComponent {
           const employeeTeams = teams
             .filter((t) => t.members.some((m) => m.id === employee?.id))
             .map((team) => {
-              return {
-                name: team.name,
-                numberOfProjects: team.projects.length,
-                numberOfMembers: team.members.length,
-                id: team.id,
-                members: team.members.map((m) => {
-                  return {
-                    avatarUrl: m.avatarUrl,
-                    redirectUrl: `/employees/${m.id}`,
-                  };
-                }),
-              };
+              return this._mapToTeam(team);
             });
           if (!employee) {
             return undefined;
@@ -69,4 +59,18 @@ export class EmployeeDetailComponent {
     private _employeesService: EmployeesService,
     private _teamsService: TeamsService
   ) {}
+  private _mapToTeam(team: TeamModel): TeamQueryModel {
+    return {
+      name: team.name,
+      numberOfProjects: team.projects.length,
+      numberOfMembers: team.members.length,
+      id: team.id,
+      members: team.members.map((m) => {
+        return {
+          avatarUrl: m.avatarUrl,
+          redirectUrl: `/employees/${m.id}`,
+        };
+      }),
+    };
+  }
 }
