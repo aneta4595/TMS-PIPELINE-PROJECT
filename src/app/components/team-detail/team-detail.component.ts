@@ -20,7 +20,7 @@ export class TeamDetailComponent {
     this._teamsService.getAllTeams(),
     this._activatedRoute.params,
   ]).pipe(
-    map(([teams, params]) =>
+    map(([teams, params]: [TeamModel[], Params]) =>
       teams
         .filter((t) => t.id === params['id'])
         .map((team) => {

@@ -21,7 +21,11 @@ export class TasksComponent {
   readonly tasksList$: Observable<TaskQueryModel[]> = combineLatest([
     this._tasksService.getAllTasks(),
     this._employeesService.getAllEmployees(),
-  ]).pipe(map(([tasks, employees]) => this._mapToTaskQuery(employees, tasks)));
+  ]).pipe(
+    map(([tasks, employees]: [TaskModel[], EmployeeModel[]]) =>
+      this._mapToTaskQuery(employees, tasks)
+    )
+  );
 
   constructor(
     private _tasksService: TasksService,
