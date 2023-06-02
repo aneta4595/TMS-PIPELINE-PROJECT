@@ -4,6 +4,7 @@ import { PresentationComponentModule } from '../presentation/presentation.compon
 import { CardWithProgressComponentModule } from '../card-with-progress/card-with-progress.component-module';
 import { CommonModule } from '@angular/common';
 import { SimpleCardComponentModule } from '../simple-card/simple-card.component-module';
+import { ProgressBarDirectiveModule } from 'src/app/directives/progress-bar.directive-module';
 
 @NgModule({
   declarations: [ProjectsComponent],
@@ -14,6 +15,7 @@ import { SimpleCardComponentModule } from '../simple-card/simple-card.component-
     CardWithProgressComponentModule,
     CommonModule,
     SimpleCardComponentModule,
+    ProgressBarDirectiveModule,
   ],
 })
 export class ProjectsComponentModule {}

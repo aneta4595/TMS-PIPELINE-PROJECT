@@ -19,7 +19,7 @@
           team.numberOfMembers +
           ' Members'
         "
-        [id]="team.id"
+        [id]="'/teams/' + team.id"
       >
         <app-avatar-list [avatars]="team.members"></app-avatar-list>
       </app-simple-card>

@@ -5,6 +5,7 @@ import { CardWithAvatarAndChecklistComponentModule } from '../card-with-avatar-a
 import { CommonModule } from '@angular/common';
 import { AvatarListComponentModule } from '../avatar-list/avatar-list.component-module';
 import { DateTransformPipeModule } from 'src/app/pipes/date-transform.pipe-module';
+import { ProgressBarDirectiveModule } from 'src/app/directives/progress-bar.directive-module';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { DateTransformPipeModule } from 'src/app/pipes/date-transform.pipe-modul
     CommonModule,
     AvatarListComponentModule,
     DateTransformPipeModule,
+    ProgressBarDirectiveModule,
   ],
   declarations: [TasksComponent],
   providers: [],
