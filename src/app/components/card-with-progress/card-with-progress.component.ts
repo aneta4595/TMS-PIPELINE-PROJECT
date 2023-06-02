@@ -15,5 +15,5 @@ import {
 export class CardWithProgressComponent {
   @Input() title?: string;
   @Input() subtitle?: string | null;
-  @Input() value?: number;
+  @Input() value!: number;
 }
