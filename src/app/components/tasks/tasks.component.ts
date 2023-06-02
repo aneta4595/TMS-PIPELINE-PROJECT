@@ -10,6 +10,7 @@ import { MemberQueryModel } from 'src/app/query-models/member.query-model';
 import { TaskQueryModel } from 'src/app/query-models/task.query-model';
 import { EmployeeModel } from 'src/app/models/employee.model';
 import { TaskModel } from 'src/app/models/task.model';
+import { ChecklistModel } from 'src/app/models/checklist.model';
 
 @Component({
   selector: 'app-tasks',
@@ -18,12 +19,21 @@ import { TaskModel } from 'src/app/models/task.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TasksComponent {
-  readonly tasksList$: Observable<TaskQueryModel[]> = combineLatest([
-    this._tasksService.getAllTasks(),
-    this._employeesService.getAllEmployees(),
-  ]).pipe(
-    map(([tasks, employees]: [TaskModel[], EmployeeModel[]]) =>
-      this._mapToTaskQuery(employees, tasks)
+  readonly tasksList$: Observable<TaskQueryModel[] | undefined> = combineLatest(
+    [
+      this._tasksService.getAllTasks(),
+      this._employeesService.getAllEmployees(),
+      this._tasksService.checklist(),
+    ]
+  ).pipe(
+    map(
+      ([tasks, employees, checkList]: [
+        TaskModel[],
+        EmployeeModel[],
+        ChecklistModel[]
+      ]) => {
+        return this._mapToTaskQuery(employees, tasks, checkList);
+      }
     )
   );
 
@@ -34,8 +44,15 @@ export class TasksComponent {
 
   private _mapToTaskQuery(
     employees: EmployeeModel[],
-    tasks: TaskModel[]
+    tasks: TaskModel[],
+    checkList: ChecklistModel[]
   ): TaskQueryModel[] {
+    const statusItemMap = checkList.reduce(
+      (a, c) => ({ ...a, [c.id]: c.isDone }),
+
+      {} as Record<string, boolean>
+    );
+
     const membersMap = employees.reduce(
       (a, c) => ({
         ...a,
@@ -51,6 +68,9 @@ export class TasksComponent {
         name: t.name,
         dueDate: t.dueDate,
         members: t.assigneeIds.map((a) => membersMap[a]),
+        maxNumberOfItems: t.checkList.length,
+        statusItems: t.checkList.map((c) => statusItemMap[c]).filter((c) => c)
+          .length,
       };
     });
   }
