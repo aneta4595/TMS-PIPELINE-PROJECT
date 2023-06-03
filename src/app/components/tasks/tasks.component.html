@@ -11,6 +11,9 @@
     [statusItems]="item.statusItems"
     [maxValue]="item.maxNumberOfItems"
   >
-    <app-avatar-list [avatars]="item.members"></app-avatar-list>
+    <app-avatar-list
+      appCursorPointer
+      [avatars]="item.members"
+    ></app-avatar-list>
   </app-card-with-avatar-and-checklist>
 </app-presentation>
