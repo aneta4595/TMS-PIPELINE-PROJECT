@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { AvatarListComponentModule } from '../avatar-list/avatar-list.component-module';
 import { DateTransformPipeModule } from 'src/app/pipes/date-transform.pipe-module';
 import { ProgressBarDirectiveModule } from 'src/app/directives/progress-bar.directive-module';
+import { CursorPointerDirectiveModule } from 'src/app/directives/cursor-pointer.directive-module';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { ProgressBarDirectiveModule } from 'src/app/directives/progress-bar.dire
     AvatarListComponentModule,
     DateTransformPipeModule,
     ProgressBarDirectiveModule,
+    CursorPointerDirectiveModule,
   ],
   declarations: [TasksComponent],
   providers: [],

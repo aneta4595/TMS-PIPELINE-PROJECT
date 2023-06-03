@@ -3,9 +3,13 @@
   [titleOfPage]="team.name"
   [subtitleOfPage]="team.description"
 >
-  <app-avatar-list app-avatar-list [avatars]="team.members"></app-avatar-list>
+  <app-avatar-list
+    appCursorPointer
+    app-avatar-list
+    [avatars]="team.members"
+  ></app-avatar-list>
   <app-tabset app-tabset [name]="'Projects'"></app-tabset>
-  <app-tab-content [name]="'Projects'"> </app-tab-content>
+
   <div class="row">
     <app-simple-card
       class="col-lg-6"

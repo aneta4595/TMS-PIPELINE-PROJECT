@@ -5,6 +5,7 @@
   <div class="row">
     <app-avatar-card
       class="col-lg-6"
+      appCursorPointer
       *ngFor="let item of employeesList$ | async"
       [avatar]="item.avatarUrl"
       [fullName]="item.firstName + ' ' + item.lastName"

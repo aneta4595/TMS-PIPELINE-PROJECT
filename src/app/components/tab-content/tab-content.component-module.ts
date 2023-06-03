@@ -5,7 +5,6 @@ import { TabContentComponent } from './tab-content.component';
   imports: [],
   declarations: [TabContentComponent],
   providers: [],
-  exports: [TabContentComponent]
+  exports: [TabContentComponent],
 })
-export class TabContentComponentModule {
-}
+export class TabContentComponentModule {}

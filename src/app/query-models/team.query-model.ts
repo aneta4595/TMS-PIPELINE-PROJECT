@@ -1,9 +1,10 @@
 import { MemberQueryModel } from '../query-models/member.query-model';
+import { ProjectQueryModel } from './project.query-model';
 
 export interface TeamQueryModel {
-  name: string;
-  numberOfProjects: number;
-  numberOfMembers: number;
-  id: string;
-  members: MemberQueryModel[];
+  readonly name: string;
+  readonly numberOfProjects: number;
+  readonly numberOfMembers: number;
+  readonly id: string;
+  readonly members: MemberQueryModel[];
 }

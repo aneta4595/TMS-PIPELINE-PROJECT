@@ -4,12 +4,15 @@
     [position]="employee.position"
     [avatarUrl]="employee.avatarUrl | placeholderImg"
   >
-    <app-tabset-with-options [optionOne]="'Teams'" [optionTwo]="'Projects'">
-      <app-tab-content [name]="'Teams'"> </app-tab-content>
-    </app-tabset-with-options>
-
-    <div class="row">
+    <app-nav-tabs
+      class="col-lg-11"
+      [optionOne]="'Teams'"
+      [optionTwo]="'Projects'"
+    >
+    </app-nav-tabs>
+    <app-tab-content>
       <app-simple-card
+        app-simple-card
         class="col-lg-6"
         *ngFor="let team of employee.teams"
         [title]="team.name"
@@ -21,8 +24,19 @@
         "
         [id]="'/teams/' + team.id"
       >
-        <app-avatar-list [avatars]="team.members"></app-avatar-list>
+        <app-avatar-list
+          appCursorPointer
+          [avatars]="team.members"
+        ></app-avatar-list>
       </app-simple-card>
-    </div>
+      <app-card-project
+        *ngFor="let project of employee.projects"
+        class="col-lg-6"
+        [title]="project.name"
+        [dueDate]="project.dueDate | howManyDays"
+        [checkListProject]="project.checkListProject"
+        [completedTask]="project.completedTask"
+      ></app-card-project>
+    </app-tab-content>
   </app-card-employee-detail>
 </ng-container>
