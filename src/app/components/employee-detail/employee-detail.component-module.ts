@@ -11,7 +11,6 @@ import { NavTabsComponentModule } from '../nav-tabs/nav-tabs.component-module';
 import { TabContentComponentModule } from '../tab-content/tab-content.component-module';
 import { CardProjectComponentModule } from '../card-project/card-project.component-module';
 import { HowManyDaysPipeModule } from 'src/app/pipes/how-many-days.pipe-module';
-import { ConComponentModule } from '../con/con.component-module';
 
 @NgModule({
   declarations: [EmployeeDetailComponent],
@@ -30,7 +29,6 @@ import { ConComponentModule } from '../con/con.component-module';
     SimpleCardComponentModule,
     CardProjectComponentModule,
     HowManyDaysPipeModule,
-    ConComponentModule,
   ],
 })
 export class EmployeeDetailComponentModule {}
