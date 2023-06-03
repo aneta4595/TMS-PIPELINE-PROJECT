@@ -6,12 +6,12 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-tab-content',
-  templateUrl: './tab-content.component.html',
+  selector: 'app-nav-tabs',
+  templateUrl: './nav-tabs.component.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TabContentComponent {
+export class NavTabsComponent {
   @Input() optionOne!: string;
   @Input() optionTwo!: string;
 }

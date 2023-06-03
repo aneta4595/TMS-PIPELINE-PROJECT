@@ -1,9 +1,37 @@
 <div class="tab-content">
-  <div class="row content-list-head">
-    <div class="col-auto">
-      <h3>{{ name }}</h3>
+  <div
+    class="tab-pane fade active show"
+    id="teams"
+    role="tabpanel"
+    data-filter-list="content-list-body"
+  >
+    <div class="content-list">
+      <div class="row content-list-head">
+        <div class="col-auto">
+          <h3>Teams</h3>
+        </div>
+      </div>
+      <div class="content-list-body row filter-list-1685722284668">
+        <ng-content select="[app-simple-card]"></ng-content>
+      </div>
     </div>
   </div>
-  <!--end of content list head-->
-  <ng-content></ng-content>
+  <!--end of tab-->
+  <div
+    class="tab-pane fade"
+    id="projects"
+    role="tabpanel"
+    data-filter-list="content-list-body"
+  >
+    <div class="content-list">
+      <div class="row content-list-head">
+        <div class="col-auto">
+          <h3>Projects</h3>
+        </div>
+      </div>
+      <div class="content-list-body row filter-list-1685722284662">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
 </div>
