@@ -4,14 +4,14 @@ import {
   Input,
   ViewEncapsulation,
 } from '@angular/core';
-import { BehaviorSubject, Observable, take, tap } from 'rxjs';
 
 @Component({
-  selector: 'app-tabset',
-  templateUrl: './tabset.component.html',
+  selector: 'app-card-presentation',
+  templateUrl: './card-presentation.component.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TabsetComponent {
-  @Input() navTitle!: string;
+export class CardPresentationComponent {
+  @Input() titleOfPage!: string;
+  @Input() subtitleOfPage!: string;
 }

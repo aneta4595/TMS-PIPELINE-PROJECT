@@ -7,7 +7,7 @@
       class="col-lg-6"
       appCursorPointer
       *ngFor="let item of employeesList$ | async"
-      [avatar]="item.avatarUrl"
+      [avatar]="item.avatarUrl | placeholderImg"
       [fullName]="item.firstName + ' ' + item.lastName"
       [position]="item.position"
       [redirectUrl]="item.id"

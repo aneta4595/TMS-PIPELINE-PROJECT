@@ -12,7 +12,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardEmployeeDetailComponent {
-  @Input() fullName?: string;
-  @Input() position?: string;
-  @Input() avatarUrl?: string;
+  @Input() fullName!: string;
+  @Input() position!: string;
+  @Input() avatarUrl!: string;
 }

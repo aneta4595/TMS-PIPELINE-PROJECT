@@ -1,5 +1,32 @@
-<ul class="nav nav-tabs nav-fill">
+<ul class="nav nav-tabs nav-fill" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" routerLink="">{{ name }}</a>
+    <a
+      class="nav-link active"
+      data-toggle="tab"
+      href="#teams"
+      role="tab"
+      aria-controls="teams"
+      aria-selected="true"
+      >{{ navTitle }}</a
+    >
   </li>
 </ul>
+<div class="tab-content">
+  <div
+    class="tab-pane fade active show"
+    id="teams"
+    role="tabpanel"
+    data-filter-list="content-list-body"
+  >
+    <div class="content-list">
+      <div class="row content-list-head">
+        <div class="col-auto">
+          <h3>{{ navTitle }}</h3>
+        </div>
+      </div>
+      <div class="content-list-body row filter-list-1685722284668">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

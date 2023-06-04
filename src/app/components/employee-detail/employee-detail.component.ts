@@ -94,6 +94,7 @@ export class EmployeeDetailComponent {
         return {
           avatarUrl: m.avatarUrl,
           redirectUrl: `/employees/${m.id}`,
+          fullName: m.firstName + ' ' + m.lastName,
         };
       }),
     };
@@ -107,6 +108,7 @@ export class EmployeeDetailComponent {
       (a, c) => ({ ...a, [c.id]: c.isDone }),
       {} as Record<string, boolean>
     );
+
     return {
       name: project.name,
       dueDate: project.dueDate,

@@ -12,8 +12,8 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardProjectComponent {
-  @Input() title?: string;
+  @Input() title!: string;
   @Input() dueDate?: number | string;
-  @Input() completedTask?: number;
-  @Input() checkListProject?: number;
+  @Input() completedTask!: number;
+  @Input() checkListProject!: number;
 }

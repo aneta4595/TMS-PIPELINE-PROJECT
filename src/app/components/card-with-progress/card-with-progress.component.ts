@@ -13,7 +13,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardWithProgressComponent {
-  @Input() title?: string;
+  @Input() title!: string;
   @Input() subtitle?: string | null;
   @Input() value!: number;
 }

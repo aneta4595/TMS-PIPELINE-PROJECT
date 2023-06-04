@@ -59,6 +59,7 @@ export class TasksComponent {
         [c.id]: {
           avatarUrl: c.avatarUrl,
           redirectUrl: `/employees/${c.id}`,
+          fullName: c.firstName + ' ' + c.lastName,
         },
       }),
       {} as Record<string, MemberQueryModel>

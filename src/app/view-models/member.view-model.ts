@@ -1,4 +1,5 @@
 export interface MemberViewModel {
-  avatarUrl: string;
-  redirectUrl: string;
+  readonly avatarUrl: string;
+  readonly redirectUrl: string;
+  readonly fullName: string;
 }

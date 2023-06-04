@@ -6,8 +6,8 @@
   >
     <app-nav-tabs
       class="col-lg-11"
-      [optionOne]="'Teams'"
-      [optionTwo]="'Projects'"
+      [navTitleOne]="'Teams'"
+      [navTitleTwo]="'Projects'"
     >
     </app-nav-tabs>
     <app-tab-content>
@@ -22,7 +22,7 @@
           team.numberOfMembers +
           ' Members'
         "
-        [id]="'/teams/' + team.id"
+        [redirectUrl]="'/teams/' + team.id"
       >
         <app-avatar-list
           appCursorPointer

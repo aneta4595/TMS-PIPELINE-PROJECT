@@ -8,9 +8,7 @@
     app-avatar-list
     [avatars]="team.members"
   ></app-avatar-list>
-  <app-tabset app-tabset [name]="'Projects'"></app-tabset>
-
-  <div class="row">
+  <app-tabset [navTitle]="'Projects'">
     <app-simple-card
       class="col-lg-6"
       *ngFor="let projects of team.projects"
@@ -18,6 +16,7 @@
       [subtitle]="
         'Due on ' + (projects.dueDate | date : 'mediumDate' : 'UTC-1')
       "
-    ></app-simple-card>
-  </div>
+      [redirectUrl]="'/projects'"
+    ></app-simple-card
+  ></app-tabset>
 </app-presentation>

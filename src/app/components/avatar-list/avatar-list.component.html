@@ -2,6 +2,8 @@
   <li *ngFor="let item of avatars">
     <img
       data-toggle="tooltip"
+      data-placement="bottom"
+      title="{{ item.fullName }}"
       [routerLink]="item.redirectUrl"
       class="avatar"
       [src]="item.avatarUrl"

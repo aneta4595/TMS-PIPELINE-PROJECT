@@ -5,10 +5,8 @@ import { AvatarListComponentModule } from '../avatar-list/avatar-list.component-
 import { CommonModule } from '@angular/common';
 import { SimpleCardComponentModule } from '../simple-card/simple-card.component-module';
 import { TabsetComponentModule } from '../tabset/tabset.component-module';
-
 import { CursorPointerDirectiveModule } from 'src/app/directives/cursor-pointer.directive-module';
 import { RouterModule } from '@angular/router';
-import { NavTabsComponentModule } from '../nav-tabs/nav-tabs.component-module';
 
 @NgModule({
   imports: [
@@ -19,7 +17,6 @@ import { NavTabsComponentModule } from '../nav-tabs/nav-tabs.component-module';
     TabsetComponentModule,
     CursorPointerDirectiveModule,
     RouterModule,
-    NavTabsComponentModule,
   ],
   declarations: [TeamDetailComponent],
   providers: [],

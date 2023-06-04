@@ -12,7 +12,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardWithAvatarAndChecklistComponent {
-  @Input() name?: string;
+  @Input() name!: string;
   @Input() dueDate?: number | unknown;
   @Input() maxNumberOfItems!: number;
   @Input() statusItems!: number;

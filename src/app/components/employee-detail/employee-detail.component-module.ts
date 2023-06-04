@@ -6,7 +6,6 @@ import { AvatarListComponentModule } from '../avatar-list/avatar-list.component-
 import { SimpleCardComponentModule } from '../simple-card/simple-card.component-module';
 import { PlaceholderImgPipeModule } from '../../pipes/placeholder-img.pipe-module';
 import { CursorPointerDirectiveModule } from 'src/app/directives/cursor-pointer.directive-module';
-import { CardWithProgressComponentModule } from '../card-with-progress/card-with-progress.component-module';
 import { NavTabsComponentModule } from '../nav-tabs/nav-tabs.component-module';
 import { TabContentComponentModule } from '../tab-content/tab-content.component-module';
 import { CardProjectComponentModule } from '../card-project/card-project.component-module';
@@ -23,10 +22,8 @@ import { HowManyDaysPipeModule } from 'src/app/pipes/how-many-days.pipe-module';
     SimpleCardComponentModule,
     PlaceholderImgPipeModule,
     CursorPointerDirectiveModule,
-    CardWithProgressComponentModule,
     NavTabsComponentModule,
     TabContentComponentModule,
-    SimpleCardComponentModule,
     CardProjectComponentModule,
     HowManyDaysPipeModule,
   ],
