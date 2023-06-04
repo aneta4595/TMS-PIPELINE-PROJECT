@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 @Directive({ selector: '[appCursorPointer]' })
 export class CursorPointerDirective {
   constructor(private _renderer2: Renderer2, private _elementRef: ElementRef) {}
+
   private _pointerSubject: BehaviorSubject<boolean> =
     new BehaviorSubject<boolean>(false);
   public pointer$: Observable<boolean> = this._pointerSubject.asObservable();

@@ -4,7 +4,6 @@ import {
   Input,
   ViewEncapsulation,
 } from '@angular/core';
-import { BehaviorSubject, Observable, take, tap } from 'rxjs';
 
 @Component({
   selector: 'app-tabset',

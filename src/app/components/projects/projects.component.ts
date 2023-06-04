@@ -4,8 +4,8 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Observable } from 'rxjs';
-import { TeamsService } from '../../services/teams.service';
-import { ProjectModel } from 'src/app/models/project.model';
+import { ProjectModel } from '../../models/project.model';
+import { ProjectsService } from '../../services/projects.service';
 
 @Component({
   selector: 'app-projects',
@@ -16,7 +16,7 @@ import { ProjectModel } from 'src/app/models/project.model';
 })
 export class ProjectsComponent {
   readonly projectsList$: Observable<ProjectModel[]> =
-    this._teamsService.getAllProjects();
+    this._projectsService.getAllProjects();
 
-  constructor(private _teamsService: TeamsService) {}
+  constructor(private _projectsService: ProjectsService) {}
 }
