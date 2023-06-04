@@ -43,6 +43,7 @@ export class TeamDetailComponent {
         return {
           avatarUrl: m.avatarUrl,
           redirectUrl: `/employees/${m.id}`,
+          fullName: m.firstName + ' ' + m.lastName,
         };
       }),
     };

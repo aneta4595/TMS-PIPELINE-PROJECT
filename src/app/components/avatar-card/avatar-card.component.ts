@@ -13,7 +13,7 @@ import {
 })
 export class AvatarCardComponent {
   @Input() avatar?: string | null;
-  @Input() fullName?: string;
-  @Input() position?: string;
-  @Input() redirectUrl?: string;
+  @Input() fullName!: string;
+  @Input() position!: string;
+  @Input() redirectUrl!: string;
 }

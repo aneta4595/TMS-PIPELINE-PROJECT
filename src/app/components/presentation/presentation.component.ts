@@ -13,6 +13,6 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PresentationComponent {
-  @Input() titleOfPage?: string;
-  @Input() subtitleOfPage?: string;
+  @Input() titleOfPage!: string;
+  @Input() subtitleOfPage!: string;
 }

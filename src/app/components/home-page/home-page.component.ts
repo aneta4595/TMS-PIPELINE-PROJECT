@@ -17,8 +17,6 @@ import { TeamsService } from 'src/app/services/teams.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePageComponent {
-  @Input() title?: string;
-
   readonly teamsList$: Observable<TeamModel[]> =
     this._teamsService.getAllTeams();
   readonly employeesList$: Observable<EmployeeModel[]> =

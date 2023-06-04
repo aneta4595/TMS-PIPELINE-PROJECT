@@ -4,6 +4,7 @@ import { AvatarCardComponentModule } from '../avatar-card/avatar-card.component-
 import { CommonModule } from '@angular/common';
 import { PresentationComponentModule } from '../presentation/presentation.component-module';
 import { SimpleCardComponentModule } from '../simple-card/simple-card.component-module';
+import { PlaceholderImgPipeModule } from 'src/app/pipes/placeholder-img.pipe-module';
 
 @NgModule({
   imports: [
@@ -11,6 +12,7 @@ import { SimpleCardComponentModule } from '../simple-card/simple-card.component-
     AvatarCardComponentModule,
     CommonModule,
     PresentationComponentModule,
+    PlaceholderImgPipeModule,
   ],
   declarations: [HomePageComponent],
   providers: [],

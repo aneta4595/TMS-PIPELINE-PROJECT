@@ -12,6 +12,6 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavTabsComponent {
-  @Input() optionOne!: string;
-  @Input() optionTwo!: string;
+  @Input() navTitleOne!: string;
+  @Input() navTitleTwo!: string;
 }

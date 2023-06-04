@@ -13,7 +13,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SimpleCardComponent {
-  @Input() title?: string;
-  @Input() subtitle?: string | number;
-  @Input() id?: string;
+  @Input() title!: string;
+  @Input() subtitle!: string;
+  @Input() redirectUrl!: string;
 }
