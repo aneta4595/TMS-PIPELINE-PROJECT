@@ -10,13 +10,15 @@ import { EmployeeWithTeamsQueryModel } from '../../query-models/employee-with-te
 import { EmployeeModel } from '../../models/employee.model';
 import { TeamModel } from '../../models/team.model';
 import { ProjectModel } from '../../models/project.model';
+import { TaskModel } from '../../models/task.model';
+import { ChecklistModel } from '../../models/checklist.model';
 import { EmployeesService } from '../../services/employees.service';
 import { TeamsService } from '../../services/teams.service';
 import { TasksService } from '../../services/tasks.service';
+import { CheckListService } from '../../services/check-list.service';
+import { ProjectsService } from '../../services/projects.service';
 import { TeamQueryModel } from '../../query-models/team.query-model';
-import { TaskModel } from 'src/app/models/task.model';
-import { ChecklistModel } from 'src/app/models/checklist.model';
-import { CheckListProjectQueryModel } from 'src/app/query-models/check-list-project.query-model';
+import { CheckListProjectQueryModel } from '../../query-models/check-list-project.query-model';
 
 @Component({
   selector: 'app-employee-detail',
@@ -30,9 +32,9 @@ export class EmployeeDetailComponent {
       this._employeesService.getAllEmployees(),
       this._activatedRoute.params,
       this._teamsService.getAllTeams(),
-      this._teamsService.getAllProjects(),
+      this._projectsService.getAllProjects(),
       this._tasksService.getAllTasks(),
-      this._tasksService.checklist(),
+      this._checkListService.getCheckList(),
     ]).pipe(
       map(
         ([employees, params, teams, projects, tasks, checkList]: [
@@ -45,10 +47,6 @@ export class EmployeeDetailComponent {
         ]) => {
           const employee: EmployeeModel | undefined = employees.find(
             (e) => e.id === params['id']
-          );
-          const task: TaskModel | undefined = tasks.find((t) => t.projectId);
-          const project: ProjectModel | undefined = projects.find(
-            (p) => p.id === task?.projectId
           );
 
           const employeeTeams = teams
@@ -82,7 +80,9 @@ export class EmployeeDetailComponent {
     private _activatedRoute: ActivatedRoute,
     private _employeesService: EmployeesService,
     private _teamsService: TeamsService,
-    private _tasksService: TasksService
+    private _tasksService: TasksService,
+    private _checkListService: CheckListService,
+    private _projectsService: ProjectsService
   ) {}
   private _mapToTeam(team: TeamModel): TeamQueryModel {
     return {

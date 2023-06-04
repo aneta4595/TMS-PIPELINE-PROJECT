@@ -3,14 +3,16 @@ import {
   Component,
   ViewEncapsulation,
 } from '@angular/core';
-import { Observable, combineLatest, map } from 'rxjs';
+import { Observable, combineLatest } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { TaskQueryModel } from '../../query-models/task.query-model';
+import { TaskModel } from '../../models/task.model';
+import { EmployeeModel } from '../../models/employee.model';
+import { ChecklistModel } from '../../models/checklist.model';
 import { TasksService } from '../../services/tasks.service';
 import { EmployeesService } from '../../services/employees.service';
-import { MemberQueryModel } from 'src/app/query-models/member.query-model';
-import { TaskQueryModel } from 'src/app/query-models/task.query-model';
-import { EmployeeModel } from 'src/app/models/employee.model';
-import { TaskModel } from 'src/app/models/task.model';
-import { ChecklistModel } from 'src/app/models/checklist.model';
+import { CheckListService } from '../../services/check-list.service';
+import { MemberQueryModel } from '../../query-models/member.query-model';
 
 @Component({
   selector: 'app-tasks',
@@ -23,7 +25,7 @@ export class TasksComponent {
     [
       this._tasksService.getAllTasks(),
       this._employeesService.getAllEmployees(),
-      this._tasksService.checklist(),
+      this._checkListService.getCheckList(),
     ]
   ).pipe(
     map(
@@ -39,7 +41,8 @@ export class TasksComponent {
 
   constructor(
     private _tasksService: TasksService,
-    private _employeesService: EmployeesService
+    private _employeesService: EmployeesService,
+    private _checkListService: CheckListService
   ) {}
 
   private _mapToTaskQuery(

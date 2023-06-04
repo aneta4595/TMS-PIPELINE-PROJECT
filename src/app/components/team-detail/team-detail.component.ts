@@ -3,7 +3,7 @@ import {
   Component,
   ViewEncapsulation,
 } from '@angular/core';
-import { Observable, combineLatest, map, switchMap } from 'rxjs';
+import { Observable, combineLatest, map } from 'rxjs';
 import { TeamsService } from '../../services/teams.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { TeamWihProjectsQueryModel } from 'src/app/query-models/team-wih-projects.query-model';
